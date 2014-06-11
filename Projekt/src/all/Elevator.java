@@ -91,6 +91,12 @@ public class Elevator extends Thread {
 				aktualnePietro = 0;
 				kierunek = 1;
 				
+				for(int j = 0; j < Start.licznikTekstow; j++){
+					if(j % 3 == 1){
+					Start.pietra.get(j).setText("      Winda jest na pietrze: " + aktualnePietro);
+					}
+					spij();
+				}
 				for(int i = minFloor; i < maxFloor; i++){
 					
 					kierunek = 1;
@@ -109,7 +115,7 @@ public class Elevator extends Thread {
 					}
 				}
 				
-				for(int i = maxFloor; i > minFloor; i--){
+				for(int i = maxFloor; i >= minFloor; i--){
 					
 					kierunek = -1;
 					aktualnePietro = i;
@@ -125,6 +131,8 @@ public class Elevator extends Thread {
 				if(aktualnePietro == minFloor){   // nie wchodzi do tego ifa ?
 					aktualnePietro = 0;
 					kierunek = 1;
+					
+					
 					
 					for(int j = 0; j < Start.licznikTekstow; j++){
 						if(j % 3 == 1){
