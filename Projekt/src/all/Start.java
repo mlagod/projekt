@@ -21,6 +21,8 @@ public class Start {
 	static List<JPanel> panel = new ArrayList<JPanel>();
 	static List<JLabel> nazwy = new ArrayList<JLabel>();
 	static List<JLabel> pietra = new ArrayList<JLabel>();
+	
+	static int licznikTekstow;
 
 
 public void dzialaj(){
@@ -45,7 +47,8 @@ public void dzialaj(){
 					// reprezetacja graficzna
 					panel.add(new JPanel());
 					
-					pietra.add(new JLabel("       Winda jest na pietrze : ")); // + aktualnePietro
+					pietra.add(new JLabel()); 
+					licznikTekstow++;
 					
 					if(listaWind.get(i).rodzaj == 1){
 					
@@ -56,6 +59,8 @@ public void dzialaj(){
 						panel.get(i).add(nazwy.get(i));
 						panel.get(i).add(pietra.get(i));
 						
+						pietra.get(i).setText("      Winda jest na pietrze: ");
+						
 					}else if(listaWind.get(i).rodzaj == 2){
 						
 						nazwy.add(new JLabel("Rodzaj " + listaWind.get(i).rodzaj));
@@ -64,6 +69,8 @@ public void dzialaj(){
 						panel.get(i).add(nazwy.get(i));
 						panel.get(i).add(pietra.get(i));
 						
+						pietra.get(i).setText("      Winda jest na pietrze: ");
+						
 					}else if(listaWind.get(i).rodzaj == 3){
 						
 						nazwy.add(new JLabel("Rodzaj " + listaWind.get(i).rodzaj));
@@ -71,9 +78,11 @@ public void dzialaj(){
 						panel.get(i).setBackground(Color.green);
 						panel.get(i).add(nazwy.get(i));
 						panel.get(i).add(pietra.get(i));
+						
+						pietra.get(i).setText("      Winda jest na pietrze: ");
 					}
 				}
-			/*	
+				
 				for(int i = 0; i < liczbaWind; i++){
 					
 					watkiWind.add(new Thread(listaWind.get(i)));
@@ -82,7 +91,7 @@ public void dzialaj(){
 				for(int i = 0; i < liczbaWind; i++){
 					watkiWind.get(i).start();
 				}
-*/
+
 }
 
 
